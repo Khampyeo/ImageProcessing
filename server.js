@@ -25,6 +25,7 @@ app.get("/filteredimage", async (req, res) => {
       }
 
       await deleteLocalFiles([filteredImagePath]);
+      return res.status(200).send({ message: "File sent successfully" });
     });
   } catch (err) {
     return res.status(422).send({ message: err });
